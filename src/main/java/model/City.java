@@ -1,4 +1,4 @@
-package com.example.demo;
+package model;
 
 public class City {
 	private String name;
@@ -7,10 +7,21 @@ public class City {
 	
 	
 	
-	
 	public String getName() {
 		return name;
 	}
+	public City(String name, int temperature, int humidity) {
+		super();
+		this.name = name;
+		this.temperature = temperature;
+		this.humidity = humidity;
+	}
+	
+	public City() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}

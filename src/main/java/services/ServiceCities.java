@@ -21,9 +21,7 @@ public class ServiceCities {
 	//}
 
 	public CitiesDTO convert(City city) {
-		CitiesDTO cityDTO = new CitiesDTO(city.getName(), 
-		convertDegreesToFarhenheight(city.getTemperature()),
-		Integer.toString(city.getHumidity()));
+		CitiesDTO cityDTO = new CitiesDTO(city.getName(), convertDegreesToFarhenheight(city.getTemperature()),Integer.toString(city.getHumidity()));
 		//citiesRepository.save(cityDTO);
 		return cityDTO;
 		

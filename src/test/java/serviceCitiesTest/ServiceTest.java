@@ -1,10 +1,10 @@
-package com.example.demo;
+package serviceCitiesTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import model.CitiesDTO;
+import model.City;
 import services.ServiceCities;
 
 class ServiceTest {
@@ -14,39 +14,40 @@ class ServiceTest {
 	@Test
 	void FarhenheightOutputOfFiveIsFourtyOne() {
 		String output = serviceCities.convertDegreesToFarhenheight(5);
-		assertEquals(41, output);
+		assertEquals("41", output);
 		
 	}
 	
 	@Test
 	void FarhenheightOutputOfTwoIsThirtyFive() {
 		String output = serviceCities.convertDegreesToFarhenheight(2);
-		assertEquals(35, output);
+		assertEquals("35", output);
 		
 	}
 	
 	@Test
-	void ConvertName() {
-		CitiesDTO sydney = new CitiesDTO("Sydney", "5", "21");
-		String output = sydney.getName();
+	void Convert_Name() {
+		City sydney = new City("Sydney", 5, 21);
+		String output = serviceCities.convert(sydney).getName();
 		assertEquals("Sydney", output);
 		
 		
 	}
 	
 	@Test
-	void ConvertTemperature() {
-		CitiesDTO sydney = new CitiesDTO("Sydney", "5", "21");
-		String output = sydney.getTemperatureInFahrenheit();
-		assertEquals("5", output);
+	void Convert_Temperature() {
+		City sydney = new City("Sydney", 5, 21);
+		String output = serviceCities.convert(sydney).getTemperatureInFahrenheit();
+		assertEquals("41", output);
 		
 		
 	}
 	
+	
 	@Test
-	void ConvertHumidity() {
-		CitiesDTO sydney = new CitiesDTO("Sydney", "5", "21");
-		String output = sydney.getHumidity();
+	void Convert_Humidity() {
+		City sydney = new City("Sydney", 5, 21);
+		String output = serviceCities.convert(sydney).getHumidity();
 		assertEquals("21", output);
 	}
 
